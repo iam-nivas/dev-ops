@@ -1,0 +1,9 @@
+Interested to showcase my skill set and grab this huge opportunity to kickstart my career.
+
+version 
+services
+build
+image
+ports
+volumes
+env

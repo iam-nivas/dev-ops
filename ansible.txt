@@ -1,0 +1,51 @@
+   52      1  ssh 172.31.88.173
+   53      2  ssh 172.31.95.216
+   54      3  ansible all --list-hosts
+   55      4  ansible webserver --list-hosts
+   56      5  ansible webservers --list-hosts
+   57      6  ansible webservers[0] --list-hosts
+   58      7  ansible all -a "ls"
+   59      8  ssh-keygen
+   60      9  ls -a
+   61     10  cd .ssh
+   62     11  ls
+   63     12  ssh-copy-id ansible@172.31.88.173
+   64     13  ssh-copy-id ansible@172.31.95.216
+   65     14  cd;
+   66     15  pwd
+   67     16  cd .ssh
+   68     17  ls
+   69     18  cat id_rsa.pub
+   70     19  cd;
+   71     20  ansible all -a "ls"
+   72     21  ansible webservers[0] -a "ls -la"
+   73     22  ansible webservers -a "touch file"
+   74     23  ls
+   75     24  ansible webservers -a "ls"
+   76     25  ansible webservers -a "touch file"
+   77     26  ansible webservers -a "which httpd"
+   78     27  ansible webservers -a "sudo which httpd"
+   79     28  ansible webservers -a "sudo yum install httpd -y"
+   80     29  ansible webservers -a "sudo which httpd"
+   81     30  ansible webservers -a "sudo yum install httpd -y"
+   82     31  ansible webservers -a "sudo yum remove httpd -y"
+   83     32  ansible webservers -a "sudo which httpd"
+   84     33  ansible webservers -b -m yum -a "pkg=httpd state=present"
+   85     34  ansible webservers -a "sudo which httpd"
+   86     35  ansible webservers -b -m yum -a "pkg=httpd state=absent"
+   87     36  ansible webservers -a "sudo which httpd"
+   88     37  ansible webservers -b -m yum -a "pkg=httpd state=present"
+   89     38  ansible webservers -b -m service -a "pkg=httpd state=started"
+   90     39  ansible webservers[1] -a "sudo yum update -y"
+   91     40  ansible webservers -b -m service -a "pkg=httpd state=started"
+   92     41  ansible webservers -b -m service -a "pkg=httpd state=restarted"
+   93     42  ansible webservers -b -m service -a "name=httpd state=started"
+   94     43  ansible webservers -b -m service -a "name=httpd state=status"
+   95     44  ansible webservers -b -m user -a "name=aravind state=present"
+   96     45  ansible webservers -a "cat /etc/passwd"
+   97     46  ls
+   98     47  pwd
+   99     48  touch aravindfile
+  100     49  ansible webservers -b -m copy -a "src=aravindfile dest=/home/ansible"
+  101     50  ansible webservers -a "ls"
+  102     51  history

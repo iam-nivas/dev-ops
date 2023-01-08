@@ -1,0 +1,112 @@
+   1  ls
+    2  git version
+    3  git config --global user.name "Demo"
+    4  git config --global user.email "funzone@gmail.com"
+    5  mkdir demo
+    6  cd demo
+    7  git init
+    8  ls
+    9  git status
+   10  git add
+   11  git --version
+   12  git config --global user.name "jerry"
+   13  git config --global user.email "jerry97@gmail.com"
+   14  mkdir apple
+   15  mkdir orange
+   16  ll
+   17  cat apple
+   18  cd apple
+   19  ll
+   20  pwd
+   21  ll
+   22  touch file1
+   23  touch file2
+   24  ls
+   25   git init .
+   26  ll lrt
+   27  ll -lrt
+   28  ll -lrt -a
+   29  ll .git
+   30  vim file1
+   31  git add file1
+   32  git status
+   33  git rm --cached file1
+   34  git status
+   35  git add file1
+   36  git status
+   37  git commit -m "first time process"
+   38  git status
+   39  vim file1
+   40  git status
+   41  git restore file1
+   42  git status
+   43  cat file1
+   44  vim file1
+   45  git status
+   46  git add file1
+   47  git commit -m "first time process for test"
+   48  git status
+   49  touch file3 file4
+   50  ll -lrt -a
+   51  git add file3
+   52  git add file4
+   53  git status
+   54  git log
+   55  git add -m "file3 and file4 added"
+   56  git commit -m "file3 and file4 added"
+   57  git status
+   58  git log
+   59  git log --onelog
+   60  git log --oneline
+   61  ll
+   62  cd ..
+   63  ll
+   64  ll -ltr -a
+   65  ll -ltr
+   66  cp -rf apple /apple_old
+   67  sudo cp -rf apple /apple_old
+   68  su
+   69  sudo bash
+   70  sudo su
+   71  cd apple
+   72  ll
+   73  cd..
+   74  cd ..
+   75  cd apple_old
+   76  sudo -su
+   77  pwd
+   78  whoami
+
+
+ cp -R apple/* apple_old
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

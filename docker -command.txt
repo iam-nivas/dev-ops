@@ -1,0 +1,61 @@
+ 1  yum install docker -y
+    2  systemctl enable docker 
+    3  systemctl start docker 
+    4  docker staus
+    5  systemctl status docker 
+    6  docker run -it --name Testcont ubuntu /bin/bash
+    7  yum install vi -y
+    8  vi Dockerfile 
+    9  docker build -t myimage .
+   10  vi dockerfile
+   11  docker images
+   12  cat dockerfile
+   13  cat Dockerfile
+   14  vi Dockerfile
+   15  docker build -t myimage .
+   16  docker images
+   17  docker run -it --name volumecont1 myimage /bin/bash
+   18  vi Dockerfile
+   19  docker rm volumecont1
+   20  docker ps -a
+   21  docker build -t volimg .
+   22  docker images
+   23  docker run -it --name volumecont1 volimg /bin/bash
+   24  docker run -it --name volcont2 --volume from volumecont1 --privileged=true ubuntu /bin/bash
+   25  docker run -it --name volcont2 --volumes from volumecont1 --privileged=true ubuntu /bin/bash
+   26  docker run -it --name volcont2 -volumes from volumecont1 --privileged=true ubuntu /bin/bash
+   27  docker run -it --name volcont2 --volumes -from volumecont1 --privileged=true ubuntu /bin/bash
+   28  docker run -it --name volcont2 --volumes-from volumecont1 --privileged=true ubuntu /bin/bash
+   29  docker start volumecont1
+   30  docker attach volumecont1
+   31  docker start volumecont2
+   32  docker start volcont2
+   33  docker attach volcont2
+   34  docker run -it --name volcont3 -v /srini ubuntu /bin/bash
+   35  docker run -it --name volcont4 --volumes-from volcont3 --privileged=true ubuntu /bin/bash
+   36  docker start volcont3
+   37  ls
+   38  docker attach volcont3
+   39  docker start volcont4
+   40  docker attach volcont4
+   41  docker run -it --name newcont -v /home/ec2-user:/volume ubuntu /bin/bash
+   42  pwd
+   43  ls
+   44  touch test1
+   45  docker start newcont
+   46  docker attach newcont
+   47  ls
+   48  cd /mnt
+   49  ls
+   50  exit
+   51  docker run -dt --name fbcontainer ubuntu /bin/bash
+   52  docker ps
+   53  docker attach fbcontainer
+   54  docker ps
+   55  docker attach fbcontainer
+   56  docker exec -it fbcontainer /bin/bash
+   57  docker ps
+   58  docker stop fbcontainer
+   59  docker ps -a 
+   60  docker ps
+   61  history
