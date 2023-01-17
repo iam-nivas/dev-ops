@@ -1,0 +1,45 @@
+version: "2.2"
+services:
+  jenkins:
+    image: ubuntu:22.04
+    command:
+      - /bin/bash
+      - -c
+      - |
+        apt update
+        apt install openjdk-17-jdk -y
+        apt install curl -y
+        curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+        echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+        apt-get update
+        apt-get install jenkins -y
+        java -version
+        usr/bin/jenkins
+    ports:
+      - "8080:8080"
+    networks:
+      - archimedis
+  jfrog:
+    image: ubuntu:20.04
+    command:
+      - /bin/bash
+      - -c
+      - |
+        apt update
+        apt install curl -y
+        mkdir /home/jfrog
+        apt install net-tools -y
+        cd /home/jfrog && curl -O -L https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/7.9.2/jfrog-artifactory-oss-7.9.2-linux.tar.gz
+        cd /home/jfrog && tar -xvf jfrog-artifactory-oss-7.9.2-linux.tar.gz
+        cd /home/jfrog && mv artifactory-oss-7.9.2/ artifactory
+        netstat -tulpn
+        /home/jfrog/artifactory/app/bin/installService.sh
+        /home/jfrog/artifactory/app/bin/artifactory.sh
+    ports:
+      - "8081:8081"
+      - "8082:8082"
+    networks:
+      - archimedis
+networks:
+  archimedis:
+    driver: bridge
